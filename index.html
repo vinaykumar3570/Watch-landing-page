@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>AquaChron | Watch Company </title>
+
+   <style>
+      *{
+         margin: 0;
+         padding: 0;
+         box-sizing: border-box;
+         text-decoration: none;
+         color: white;
+      }
+      body{
+         padding: 0 50px;
+         height: 100vh;
+         width: 100%;
+         /* 4E2430      5C5C5C */
+         background: #1D1D1D;
+         transition: .5s;
+      }
+      nav{
+         background:none;
+         height: 80px;
+         display: flex;
+         justify-content: space-between;
+         line-height: 80px;
+      }
+      nav .logo{
+         font-size: 26px;
+         font-weight: bold;
+      }
+      ul{
+         list-style: none;
+         display: flex;
+         width: 45%;
+         justify-content: space-between;
+      }
+      ul li{
+         font-size: 23px;
+      }
+      header{
+         height: 85vh;
+         width: 100%;
+         display: flex;
+
+      }
+      header .left{
+         width: 50%;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+      }
+      .left h1{
+         font-size: 50px;
+      }
+      .left p{
+         line-height: 28px;
+         margin-top: 20px;
+         font-size: 20px;
+         font-weight: 100;
+      }
+      button{
+         height: 50px;
+         width: 200px;
+         margin-top: 20px;
+         border: 2px solid white;
+         border-radius: 50px;
+         outline: none;
+         font-size: 21px;
+         transition: all .8s;
+         color: #fff;
+         background: none;
+         cursor: pointer;
+      }
+      button:hover{
+         background: #fff;
+         color: #000;
+      }
+      .right{
+         display: flex;
+         flex-direction: column;
+         justify-content: space-evenly;
+         align-items: center;
+         width: 50%;
+      }
+      .right .watch-img{
+         height: 360px;
+         width: 350px;
+         position: relative;
+         overflow: hidden;
+      }
+      .watch-img img{
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+      }
+      .watchImg{
+         position: absolute;
+         top: 0;
+         left: 60%;
+         /* opacity: 0; */
+         transform: scale(0);
+         transform-origin: bottom;
+         transition: all .8s;
+      }
+
+      .right .watches-img{
+         height: 70px;
+         width: 250px;
+      }
+      .watches-img{
+         display: flex;
+         justify-content: space-between;
+      }
+      .watches-img .watch{
+         height: 100%;
+         width: 60px;
+      }
+      .watch img{
+         height: 100%;
+         width: 100%;
+         object-fit: cover;
+         cursor: pointer;
+      }
+
+      .end{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+      }
+
+      .box{
+         height: 150px;
+         border: 1px solid rgb(119, 119, 119);
+         position: relative;
+         border-radius: 10px;
+         display: flex;
+         flex-direction: column;
+         justify-content: space-between;
+      }
+      .box .circle{
+         height: 20px;
+         width: 20px;
+         border-radius: 50%;
+         position: absolute;
+         left: 50%;
+         transform: translateX(-50%);
+         cursor: pointer;
+         transition: .6s;
+         border: 1px solid rgb(134, 134, 134);
+      }
+      .box .circle1{
+         background: #1D1D1D;
+         top: -5%;
+      }
+      .box .circle2{
+         top: 45%;
+         background: #a7a7a7;
+      }
+      .box .circle3{
+         top: 90%;
+         background: rgb(126, 15, 46);
+      }
+      .box .large{
+         transform: scale(1.6) translatex(-30%);
+      }
+      .active{
+         left: 0;
+         opacity: 1;
+         transform: scale(1);
+      }
+
+   </style>
+
+</head>
+<body>
+      <nav>
+         <div class="logo">
+            AquaChron
+         </div>
+         <ul>
+            <li><a href=""> Home</a></li>
+            <li> <a href=""> About</a></li>
+            <li> <a href=""> Privacy</a></li>
+            <li> <a href=""> Contact</a></li>
+         </ul>
+      </nav>
+      <header>
+         <div class="left">
+            <h1> Timeless Elegance  in<br> Every Tick </h1>
+            <p>At AquaChron, we craft watches inspired by the ocean’s beauty and strength, offering precision,durability, and timeless style for every adventure. we craft watches inspired by the ocean’s beauty and strength, offering precision,durability, and timeless style for every adventure.</p>
+            <button> Check more! </button>
+         </div>
+         <div class="right">
+            <div class="watch-img">
+               <img src="black.png" class="watchImg mainBlack active">
+               <img src="grey.png" class="watchImg mainGrey">
+               <img src="red.png" class="watchImg mainRed">
+            </div>
+            <div class="watches-img">
+               <div class="black watch">
+                  <img src="black.png" onclick="blackWatch()">
+               </div>
+               <div class="grey watch">
+                  <img src="grey.png" onclick="greyWatch()">
+               </div>
+               <div class="red watch">
+                  <img src="red.png" onclick="redWatch()">
+               </div>
+            </div>
+         </div>
+         <div class="end">
+            <div class="box">
+               <div class="circle circle1 large" onclick="blackWatch()"></div>
+               <div class="circle circle2" onclick="greyWatch()"></div>
+               <div class="circle circle3" onclick="redWatch()"></div>
+            </div>
+         </div>
+      </header>
+
+   <script>
+      let circle1 = document.querySelector(".circle1")
+      let circle2 = document.querySelector(".circle2")
+      let circle3 = document.querySelector(".circle3")
+      let mainRed = document.querySelector(".mainRed")
+      let mainGrey = document.querySelector(".mainGrey")
+      let mainBlack = document.querySelector(".mainBlack")
+      function blackWatch(){
+         mainBlack.classList.add("active");
+         mainGrey.classList.remove("active");
+         mainRed.classList.remove("active");
+         circle1.classList.add("large");
+         circle2.classList.remove("large");
+         circle3.classList.remove("large");
+         document.body.style.background = "#1D1D1D";
+      }
+      function greyWatch(){
+         mainBlack.classList.remove("active");
+         mainGrey.classList.add("active");
+         mainRed.classList.remove("active");
+         circle1.classList.remove("large");
+         circle2.classList.add("large");
+         circle3.classList.remove("large");
+         document.body.style.background = "#5C5C5C";
+      }
+      function redWatch(){
+         mainBlack.classList.remove("active");
+         mainGrey.classList.remove("active");
+         mainRed.classList.add("active");
+         circle1.classList.remove("large");
+         circle2.classList.remove("large");
+         circle3.classList.add("large");
+         document.body.style.background = "#4E2430";
+      }
+   </script>
+</body>
+</html>
